@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Programmer programmer = new Programmer("Иван", "занят");
+        Programmer programmer = new Programmer("Jack", "не доступен");
 
         try {
             String result = programmer.doWork("Написать код");
