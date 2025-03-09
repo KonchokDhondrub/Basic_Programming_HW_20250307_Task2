@@ -1,6 +1,6 @@
 class Programmer {
-    private String name;
-    private String status;
+    private final String name;
+    private final String status;
 
     public Programmer(String name, String status) {
         this.name = name;
