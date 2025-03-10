@@ -6,21 +6,19 @@ public class Main {
         try {
             String result = programmer.doWork("Написать код");
             System.out.println("Результат: " + result);
-        } catch (ProgrammerBusyException e) {
-            System.out.println(e.getMessage());
-        } catch (ProgrammerUnavailableNowException e) {
+        } catch (ProgrammerBusyException | ProgrammerUnavailableNowException e) {
             System.out.println(e.getMessage());
         }
     }
 }
 
-class ProgrammerBusyException extends RuntimeException {
+class ProgrammerBusyException extends Exception {
     public ProgrammerBusyException(String message) {
         super(message);
     }
 }
 
-class ProgrammerUnavailableNowException extends RuntimeException {
+class ProgrammerUnavailableNowException extends Exception {
     public ProgrammerUnavailableNowException(String message) {
         super(message);
     }
