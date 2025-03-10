@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        Programmer programmer = new Programmer("Jack", "не доступен");
+        Programmer programmer = new Programmer("Jack");
+        programmer.setUnavailable();
 
         try {
             String result = programmer.doWork("Написать код");
@@ -13,13 +14,13 @@ public class Main {
     }
 }
 
-class ProgrammerBusyException extends Exception {
+class ProgrammerBusyException extends RuntimeException {
     public ProgrammerBusyException(String message) {
         super(message);
     }
 }
 
-class ProgrammerUnavailableNowException extends Exception {
+class ProgrammerUnavailableNowException extends RuntimeException {
     public ProgrammerUnavailableNowException(String message) {
         super(message);
     }
